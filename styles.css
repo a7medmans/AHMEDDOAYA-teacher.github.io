@@ -1104,6 +1104,7 @@ body {
     margin-left: 8px;
     font-size: 24px;
 }
+
 /* التجاوب مع الأجهزة */
 @media (max-width: 1200px) {
     .philosophy-content {
@@ -1207,19 +1208,12 @@ body {
     margin-top: 30px;
 }
 
-/* الصف الثاني: 3 كاردات جنب بعض */
+/* الصف الثاني في قسم "من أنا" - كاردين فقط */
 .about-bottom-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* 3 أعمدة متساوية */
+    grid-template-columns: repeat(2, 1fr);  /* عمودين متساويين */
     gap: 25px;
     margin-top: 25px;
-}
-
-/* التجاوب مع الشاشات المتوسطة */
-@media (max-width: 1024px) {
-    .about-bottom-cards {
-        grid-template-columns: repeat(2, 1fr);  /* على التابلت: 2 في صف */
-    }
 }
 
 /* التجاوب مع الموبايل */
@@ -1228,3 +1222,172 @@ body {
         grid-template-columns: 1fr;  /* على الموبايل: عمود واحد */
     }
 }
+
+/* تنسيق أزرار التواصل المباشر */
+.contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn-email { background-color: #EA4335; } /* لون Gmail */
+.btn-call { background-color: #34A853; }  /* لون الاتصال */
+.btn-whatsapp { background-color: #25D366; } /* لون واتساب */
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    opacity: 0.9;
+}
+
+/* أزرار السوشيال ميديا - تصميم احترافي */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    flex: 1;
+    min-width: 140px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #1A5490, #2874B5);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ألوان مخصصة لكل منصة */
+.social-btn.linkedin {
+    background: linear-gradient(135deg, #0077B5, #00A0DC);
+}
+
+.social-btn.twitter {
+    background: linear-gradient(135deg, #1DA1F2, #0C85D0);
+}
+
+.social-btn.github {
+    background: linear-gradient(135deg, #333, #24292e);
+}
+
+/* تأثير الموجة عند المرور */
+.social-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.social-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.social-btn:active {
+    transform: translateY(-1px);
+}
+
+/* الأيقونات */
+.social-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* التجاوب */
+@media (max-width: 600px) {
+    .social-links {
+        flex-direction: column;
+    }
+    
+    .social-btn {
+        width: 100%;
+    }
+}
+
+/* الأيقونة والعنوان متجاورين */
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    flex-direction: row-reverse;  /* الأيقونة على اليمين */
+}
+
+.card-icon {
+    font-size: 36px;
+    flex-shrink: 0;
+}
+
+.card h3 {
+    color: #1A5490;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    text-align: right;
+}
+
+/* تنسيق كارد النبذة الشخصية - الأيقونة والعنوان في المنتصف */
+.about-section .content-grid .card {
+    text-align: center;  /* توسيط المحتوى */
+}
+
+.about-section .content-grid .card .card-icon {
+    font-size: 48px;
+    margin: 0 auto 15px;
+    display: inline-block;
+}
+
+.about-section .content-grid .card h3 {
+    color: #1A5490;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.about-section .content-grid .card p {
+    color: #666;
+    line-height: 1.8;
+    text-align: right;  /* النص يبقى من اليمين */
+    direction: rtl;
+}
+
