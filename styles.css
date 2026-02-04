@@ -273,30 +273,47 @@ body {
     line-height: 1.8;
 }
 
+/* تنسيق القوائم المحسّن - علامات الصح مع مسافات أكبر */
 .list {
     list-style: none;
     padding-right: 0;
+    margin-top: 10px;
+    text-align: right;
 }
 
 .list li {
-    padding: 8px 0 8px 20px;
+    padding: 15px 35px 15px 15px;
     position: relative;
-    color: #666;
+    color: #555;
+    line-height: 2;
+    margin-bottom: 1px;
+    text-align: right;
+    direction: rtl;
 }
 
 .list li::before {
     content: '✓';
     position: absolute;
     right: 0;
+    top: 15px;
     color: #F4A460;
     font-weight: bold;
+    font-size: 20px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(244, 164, 96, 0.2);
+    border-radius: 50%;
 }
 
-/* الفلسفة التربوية */
+/* الفلسفة التربوية - 4 كاردات في صف واحد
 .philosophy-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .philosophy-card {
@@ -304,13 +321,82 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: right;
+    direction: rtl;
 }
 
 .philosophy-card h3 {
     color: #1A5490;
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 15px;
+    text-align: right;
+    direction: rtl;
 }
+
+.philosophy-card h3 .card-emoji {
+    margin-left: 8px;
+}
+
+.philosophy-card p {
+    text-align: right;
+    direction: rtl;
+    color: #666;
+    line-height: 1.8;
+}
+
+.philosophy-card .list {
+    text-align: right;
+    direction: rtl;
+} */
+
+/* الفلسفة التربوية - 2 كاردات في صف واحد */
+.philosophy-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* عمودين فقط بدلاً من 4 */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.philosophy-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: right;
+    direction: rtl;
+}
+
+.philosophy-card h3 {
+    color: #1A5490;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: right;
+    direction: rtl;
+}
+
+.philosophy-card h3 .card-emoji {
+    margin-left: 8px;
+}
+
+.philosophy-card p {
+    text-align: right;
+    direction: rtl;
+    color: #666;
+    line-height: 1.8;
+}
+
+.philosophy-card .list {
+    text-align: right;
+    direction: rtl;
+}
+
+/* التجاوب: على الموبايل تصبح عمود واحد */
+@media (max-width: 768px) {
+    .philosophy-content {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* الخط الزمني */
 .timeline {
@@ -360,6 +446,13 @@ body {
     margin-bottom: 10px;
 }
 
+.timeline-content h4 {
+    color: #2874B5;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
 .timeline-date {
     color: #F4A460;
     font-weight: 600;
@@ -389,7 +482,7 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
@@ -458,7 +551,96 @@ body {
     font-weight: 600;
 }
 
-/* الخطط الدراسية */
+.cert-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.cert-list li {
+    padding: 12px 0 12px 45px;
+    color: #555;
+    font-size: 14px;
+    position: relative;
+    line-height: 1.9;
+    margin-bottom: 12px;
+    text-align: right;
+    direction: rtl;
+}
+
+.cert-list li::before {
+    content: '✓';
+    position: absolute;
+    right: 0;
+    top: 12px;
+    color: #F4A460;
+    font-weight: bold;
+    font-size: 18px;
+    width: 23px;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(244, 164, 96, 0.2);
+    border-radius: 50%;
+}
+
+/* المشاريع */
+.projects-content {
+    margin-top: 30px;
+}
+
+.project-category {
+    margin-bottom: 40px;
+}
+
+.project-category h3 {
+    color: #1A5490;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #F4A460;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-left: 4px solid #F4A460;
+}
+
+.section.bg-light .project-card {
+    background: white;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h4 {
+    color: #1A5490;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.project-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* الخطط الدراسية
 .plans-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -484,7 +666,50 @@ body {
     color: #666;
     margin-bottom: 20px;
     line-height: 1.8;
+} */
+
+/* الخطط الدراسية - 2 كاردات في صف واحد */
+.plans-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* عمودين فقط */
+    gap: 25px;
+    margin-top: 30px;
 }
+
+.plan-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: right;  /* محاذاة من اليمين */
+    direction: rtl;
+}
+
+.plan-card h3 {
+    color: #1A5490;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.plan-card h3 .card-emoji {
+    margin-left: 8px;
+}
+
+.plan-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    text-align: right;
+}
+
+/* التجاوب: على الموبايل تصبح عمود واحد */
+@media (max-width: 768px) {
+    .plans-content {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* الموارد */
 .resources-grid {
@@ -554,6 +779,22 @@ body {
     text-align: center;
 }
 
+/* تنسيق روابط المشاريع - بدون خط وأنيميشن جميل */
+.project-showcase a {
+    text-decoration: none !important;
+    display: block;
+    color: inherit;
+}
+
+.project-showcase a:hover,
+.project-showcase a:focus,
+.project-showcase a:visited,
+.project-showcase a:active {
+    text-decoration: none !important;
+    outline: none;
+}
+
+/* المربع مع أنيميشن احترافي */
 .project-placeholder {
     width: 100%;
     height: 200px;
@@ -564,12 +805,77 @@ body {
     justify-content: center;
     color: white;
     font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(26, 84, 144, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* تأثير الموجة عند المرور */
+.project-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: 1;
+}
+
+.project-placeholder:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+/* رفع المربع وتكبيره عند المرور */
+.project-placeholder:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(26, 84, 144, 0.4);
+    background: linear-gradient(135deg, #2874B5, #1A5490);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* تأثير الضغط */
+.project-placeholder:active {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 8px 20px rgba(26, 84, 144, 0.3);
+}
+
+/* أيقونة عرض تظهر عند المرور */
+.project-placeholder::after {
+    content: '👁️ اضغط للعرض';
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    font-size: 13px;
+    background: rgba(244, 164, 96, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.project-placeholder:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* نص المشروع */
 .project-item p {
     color: #333;
     font-weight: 600;
+    margin-top: 15px;
+    font-size: 16px;
 }
 
 .stats-card {
@@ -662,11 +968,11 @@ body {
     margin-bottom: 20px;
 }
 
-/* التطوير المهني */
+/* التطوير المهني - 4 كاردات في صف */
 .development-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     margin-top: 30px;
 }
 
@@ -681,6 +987,24 @@ body {
     color: #1A5490;
     font-size: 20px;
     margin-bottom: 20px;
+    text-align: right;
+    direction: rtl;
+}
+
+.development-card h3 .card-emoji {
+    margin-left: 8px;
+}
+
+.development-card p {
+    text-align: right;
+    direction: rtl;
+    color: #666;
+    line-height: 1.8;
+}
+
+.development-card .list {
+    text-align: right;
+    direction: rtl;
 }
 
 /* التواصل */
@@ -774,7 +1098,24 @@ body {
     font-size: 14px;
 }
 
+/* تنسيق الأيقونات المنفصلة في العناوين */
+.card-emoji {
+    display: inline;
+    margin-left: 8px;
+    font-size: 24px;
+}
+
 /* التجاوب مع الأجهزة */
+@media (max-width: 1200px) {
+    .philosophy-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .development-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .sidebar {
         width: 100%;
@@ -805,7 +1146,8 @@ body {
     .resources-grid,
     .awards-grid,
     .development-content,
-    .contact-content {
+    .contact-content,
+    .project-cards {
         grid-template-columns: 1fr;
     }
 
