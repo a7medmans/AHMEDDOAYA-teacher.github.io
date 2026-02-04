@@ -1197,3 +1197,35 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #2874B5;
 }
+
+/* قسم من أنا - تصميم احترافي */
+
+/* تخطيط خاص لقسم "من أنا" */
+.about-section .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;  /* النبذة الشخصية تأخذ العرض الكامل */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* الصف الثاني: 3 كاردات جنب بعض */
+.about-bottom-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 أعمدة متساوية */
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* التجاوب مع الشاشات المتوسطة */
+@media (max-width: 1024px) {
+    .about-bottom-cards {
+        grid-template-columns: repeat(2, 1fr);  /* على التابلت: 2 في صف */
+    }
+}
+
+/* التجاوب مع الموبايل */
+@media (max-width: 768px) {
+    .about-bottom-cards {
+        grid-template-columns: 1fr;  /* على الموبايل: عمود واحد */
+    }
+}
